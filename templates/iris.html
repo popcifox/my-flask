@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>붓꽃 예측</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .predict-form {
+      width: 400px;
+      padding: 30px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-label {
+      font-weight: 500;
+    }
+    .result-message {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #2c3e50;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="predict-form">
+    <h3 class="text-center mb-4">붓꽃 품종 예측</h3>
+    <div id="irisForm">
+      <div class="mb-3">
+        <label for="sepalLength" class="form-label">받침 길이 (cm)</label>
+        <input type="number" step="0.01" class="form-control" id="sepalLength" required>
+      </div>
+      <div class="mb-3">
+        <label for="sepalWidth" class="form-label">받침 너비 (cm)</label>
+        <input type="number" step="0.01" class="form-control" id="sepalWidth" required>
+      </div>
+      <div class="mb-3">
+        <label for="petalLength" class="form-label">꽃잎 길이 (cm)</label>
+        <input type="number" step="0.01" class="form-control" id="petalLength" required>
+      </div>
+      <div class="mb-4">
+        <label for="petalWidth" class="form-label">꽃잎 너비 (cm)</label>
+        <input type="number" step="0.01" class="form-control" id="petalWidth" required>
+      </div>
+      <div class="d-grid">
+        <button id="request-btn" type="submit" class="btn btn-primary btn-lg">분석하기</button>
+      </div>
+    </div>
+
+    <!-- 결과 메시지 영역 -->
+    <div id="result" class="result-message">메세지</div>
+  </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="{{ url_for('static', filename='js/iris.js') }}"></script>
+</html>
