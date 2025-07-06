@@ -12,9 +12,12 @@ app.register_blueprint(user_bp,url_prefix='/user')
 app.register_blueprint(board_bp,url_prefix='/board')
 app.register_blueprint(ai_bp,url_prefix='/ai')
 
-@app.route('/')
+@app.route('/health')
 def index():
-    return render_template('index.html')
+    return ({
+        'success' : True,
+        'massage' : '서버정상작동'
+    })
 
 
 

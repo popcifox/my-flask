@@ -9,3 +9,7 @@ def index():
 @view_bp.route('/iris')
 def iris():
     return render_template('iris.html')
+
+@view_bp.route('/create-user')
+def create_user():
+    return render_template('create-user.html')
