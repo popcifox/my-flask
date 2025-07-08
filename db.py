@@ -2,9 +2,9 @@
 import pymysql
 from pymysql.cursors import DictCursor
 db_config = {
-    'host': '127.0.0.1',
+    'host': '43.200.6.22',
     'port' : 3306,
-    'user': 'root',
+    'user': 'user',
     'password': '1234',
     'database': 'my_db',
     'charset': 'utf8mb4',
